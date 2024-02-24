@@ -1,0 +1,96 @@
+// create user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "name": "Jhone Doe",
+  "email": "jhon@gmail.com",
+  "password": "password",
+  "confPassword": "password",
+  "role": "user"
+}
+
+###
+// get All USers
+GET http://localhost:5000/users
+
+###
+// get Single User
+GET http://localhost:5000/users/71881d32-219f-4d1f-8b99-c5796f7221ea
+
+###
+// update a user
+PATCH http://localhost:5000/users/a9490f8e-eb54-47ec-8b2c-ef5fcf7c737c
+Content-Type: application/json
+
+{
+  "name": "Jhone Upated",
+  "email": "jhon@gmail.com",
+  "password": "",
+  "confPassword": "",
+  "role": "user"
+}
+
+###
+// delete user
+DELETE http://localhost:5000/users/a9490f8e-eb54-47ec-8b2c-ef5fcf7c737c
+
+###
+// login user
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "password"
+}
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "email": "jhon@gmail.com",
+  "password": "password"
+}
+
+### 
+GET  http://localhost:5000/me
+
+###
+//logout
+DELETE  http://localhost:5000/logout
+
+### --------------------------------
+// get all products
+GET  http://localhost:5000/products
+
+###
+// get product by id
+GET  http://localhost:5000/products/2a048bc6-fd9c-47d7-9374-e0e984bea95e
+
+###
+// create product
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+  "name": "Avanza",
+  "price": 44000
+}
+
+###
+// updated product
+PATCH  http://localhost:5000/products/8b6723b8-3ea8-4ca8-8396-fdb077f18152
+Content-Type: application/json
+
+{
+  "name": "Tesla updated",
+  "price": 78787
+}
+
+###
+// delete product by id
+DELETE http://localhost:5000/products/8b6723b8-3ea8-4ca8-8396-fdb077f18152
+
