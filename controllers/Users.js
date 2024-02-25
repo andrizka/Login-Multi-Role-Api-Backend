@@ -32,7 +32,7 @@ export const getUserById = async (req, res) => {
 
 export const createUser = async (req, res) => {
   const { name, email, password, confPassword, role } = req.body;
-  if (password != confPassword) return res.status(200).json({ msg: 'Password and Confirm Password not valid' });
+  if (password != confPassword) return res.status(400).json({ msg: 'Password and Confirm Password not valid' });
   const hashPassword = await argon2.hash(password);
   try {
     await User.create({
@@ -64,7 +64,7 @@ export const updateUser = async (req, res) => {
     hashPassword = await argon2.hash(password);
   }
 
-  if (password != confPassword) return res.status(200).json({ msg: 'Password and Confirm Password not valid' });
+  if (password != confPassword) return res.status(400).json({ msg: 'Password and Confirm Password not valid' });
   try {
     await User.update(
       {
